@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>TeeTime Golf Pass</title>
+</head>
+
+<body>
+    <!-- 상단 알림 바 -->
+    <div class="top-banner"><span class="fire-icon">🔥</span> 여름 특가 진행 중! 골프 패스 40% 할인</div>
+
+    <!-- 네비게이션 -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">KGolf-Time <span class="logo-subtitle">GOLF PASS</span></div>
+            <ul class="nav-menu">
+                <li><a class="nav-item" onclick="showPage('courses')">Golf Courses</a></li>
+                <li><a class="nav-item active" onclick="showPage('passes')">Golf Passes</a></li>
+                <li><a class="nav-item" onclick="showPage('trips')">Golf Trips</a></li>
+                <li><a class="nav-item" onclick="showPage('comingSoon')">Golf Deals</a></li>
+                <li><a class="nav-item" onclick="showPage('comingSoon')">Events</a></li>
+                <li><a class="nav-item" onclick="showPage('comingSoon')">Blog</a></li>
+                <li><a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">Book Now</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Golf Courses -->
+    <section class="courses-page" id="coursesPage">
+        <div class="courses-hero-video">
+            <video autoplay muted loop playsinline preload="auto" poster="thumbnail.jpg"
+                style="opacity:1; width:100%; height:100%; object-fit:cover;">
+                <source
+                    src="https://video.wixstatic.com/video/0655d6_3b4f08c35d5d488b842a3c43f0e48211/720p/mp4/file.mp4"
+                    type="video/mp4">
+                브라우저가 비디오를 지원하지 않습니다.
+            </video>
+            <div class="courses-hero-text">
+                <h1 class="courses-title">KC Golf Stadium</h1>
+                <p class="courses-subtitle">프리미엄 실내 골프 경험의 새로운 기준</p>
+            </div>
+        </div>
+
+        <div class="courses-content">
+            <div class="courses-image">
+                <video autoplay muted loop playsinline style="width:100%; height:400px; object-fit:cover;">
+                    <source
+                        src="https://video.wixstatic.com/video/0655d6_b92fc025b4a549de9aec48b3962ea74a/480p/mp4/file.mp4"
+                        type="video/mp4">
+                    브라우저가 비디오를 지원하지 않습니다.
+                </video>
+            </div>
+
+            <div class="courses-info">
+                <h3>최첨단 실내 골프 시설</h3>
+                <p>K Golf Indoor는 최신 기술과 럭셔리한 환경이 결합된 프리미엄 실내 골프 시설입니다. 실제 골프장과 같은 경험을 실내에서 즐기실 수 있습니다.</p>
+                <ul class="courses-features">
+                    <li>4K 초고화질 스크린 골프 시뮬레이터</li>
+                    <li>세계 유명 골프장 100+ 코스</li>
+                    <li>프리미엄 클럽 하우스 & 라운지</li>
+                    <li>개인 레슨 및 그룹 레슨 프로그램</li>
+                    <li>24시간 운영 (연중무휴)</li>
+                    <li>프리미엄 장비 렌탈 서비스</li>
+                </ul>
+                <div class="courses-cta"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Golf Trips -->
+    <section class="trips-page" id="tripsPage">
+        <div class="trips-hero">
+            <div class="trips-hero-content">
+                <h1 class="trips-title">푼타카나 골프 여행</h1>
+                <p class="trips-subtitle">도미니카공화국의 천국에서 즐기는 프리미엄 골프 경험</p>
+                <p class="trips-description">카리브해의 에메랄드 바다와 화이트 샌드 비치가 어우러진 푼타카나에서 세계 최고 수준의 골프 코스들을 경험해보세요.</p>
+            </div>
+        </div>
+
+        <div class="trips-content">
+            <div class="trips-section">
+                <h2>여행 패키지</h2>
+                <div class="trips-grid">
+                    <div class="trips-card">
+                        <h3>스탠다드 패키지</h3>
+                        <div class="trips-price">$2,890</div>
+                        <p>4박 5일 푼타카나 골프 투어 기본 패키지</p>
+                        <ul class="trips-features">
+                            <li>4성급 리조트 숙박</li>
+                            <li>3라운드 골프 (18홀 × 3)</li>
+                            <li>공항 픽업/샌딩 서비스</li>
+                            <li>조식 포함</li>
+                            <li>골프 카트 포함</li>
+                        </ul>
+                    </div>
+                    <div class="trips-card">
+                        <h3>프리미엄 패키지</h3>
+                        <div class="trips-price">$4,290</div>
+                        <p>5박 6일 럭셔리 푼타카나 골프 투어</p>
+                        <ul class="trips-features">
+                            <li>5성급 올인클루시브 리조트</li>
+                            <li>4라운드 골프 (18홀 × 4)</li>
+                            <li>전용 가이드 및 통역 서비스</li>
+                            <li>모든 식사 및 음료 포함</li>
+                            <li>스파 및 레저 활동</li>
+                            <li>프라이빗 골프 레슨 1회</li>
+                        </ul>
+                    </div>
+                    <div class="trips-card">
+                        <h3>VIP 패키지</h3>
+                        <div class="trips-price">$6,890</div>
+                        <p>6박 7일 최고급 푼타카나 골프 체험</p>
+                        <ul class="trips-features">
+                            <li>최고급 리조트 스위트룸</li>
+                            <li>5라운드 골프 (명문 코스)</li>
+                            <li>프라이빗 제트 이용 가능</li>
+                            <li>미슐랭 셰프 디너</li>
+                            <li>요트 투어 및 다이빙</li>
+                            <li>개인 버틀러 서비스</li>
+                            <li>골프 프로와 함께하는 라운딩</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="trips-section">
+                <h2>추천 골프 코스</h2>
+                <div class="trips-grid">
+                    <div class="trips-card">
+                        <h3>Punta Espada Golf Club</h3>
+                        <p>잭 니클라우스가 설계한 챔피언십 코스. 카리브해를 조망하는 8개 홀이 환상적입니다.</p>
+                    </div>
+                    <div class="trips-card">
+                        <h3>Corales Golf Club</h3>
+                        <p>톰 파지오 설계의 명품 코스. 바다 절벽 위의 4개 홀이 세계적으로 유명합니다.</p>
+                    </div>
+                    <div class="trips-card">
+                        <h3>La Cana Golf Club</h3>
+                        <p>P.B. 다이가 설계한 전통적인 링크스 스타일 코스. 도전적이면서도 공정한 레이아웃.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="trips-cta">
+            <h2>지금 바로 예약하세요!</h2>
+            <p>한정된 자리, 특별한 가격으로 제공되는 푼타카나 골프 여행을 놓치지 마세요</p>
+            <button class="trips-btn">여행 상담받기</button>
+        </div>
+    </section>
+
+    <!-- Golf Passes (기본 표시) -->
+    <section class="main-content active" id="passesPage">
+        <div class="content-container">
+            <div class="section-header">
+                <h1 class="main-title">프리미엄 골프 패스 & 트립</h1>
+                <p class="subtitle">최고의 골프 코스에서 특별한 가격으로 즐기는 프리미엄 골프 경험을 만나보세요</p>
+
+                <div class="tab-navigation">
+                    <button class="tab-btn active" onclick="showTab('outdoor')">실외 골프장</button>
+                    <button class="tab-btn" onclick="showTab('indoor')">실내 골프장</button>
+                </div>
+            </div>
+
+            <!-- 실외 골프장 (하나만 남김) -->
+            <div id="outdoor" class="tab-content active">
+                <div class="cards-container">
+                    <div class="card-container">
+                        <div class="location-badge">Premium Twilight Pass</div>
+                        <div class="golf-card">
+                            <img src="https://cardinalgolfcomplex.com/wp-content/uploads/golf-page-header-2025-scaled-e1758637190122.jpg"
+                                alt="RedCrest Golf Club" class="golf-card-image">
+                            <div class="golf-card-content">
+                                <div class="club-name">RedCrest Golf Club</div>
+                                <div class="pass-type">패스 가격</div>
+                                <div class="price">$260 <span class="per-unit">/4명</span></div>
+                                <div class="features">
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일: 2026년 4월
+                                            30일</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장 (4인 동시
+                                            플레이)</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>4-5월, 9-11월: 매일 오후
+                                            3시 이후 가능</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>6-8월: 매일 오후 4시 이후
+                                            가능</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card-container">
+                        <div class="location-badge">West Wing/East Wing</div>
+                        <div class="golf-card">
+                            <img src="https://cardinalgolfcomplex.com/wp-content/uploads/RedcrestGolfClub-SQ2-uai-825x1032.png"
+                                alt="Cardinal Golf Club" class="golf-card-image">
+                            <div class="golf-card-content">
+                                <div class="club-name">Cardinal Golf Club</div>
+                                <div class="pass-type">패스 가격</div>
+                                <div class="price">$75 <span class="per-unit">/1장</span></div>
+                                <div class="features">
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일: 2026년 4월
+                                            30일</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 4장
+                                            ($300)</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>주중 (월-금): 언제나
+                                            가능</span></div>
+                                    <div class="feature-item"><span class="check-icon">✓</span><span>토/일 & 휴일: 오후 1시 이후
+                                            가능</span></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 실내 골프장 -->
+            <div id="indoor" class="tab-content">
+                <div class="slider-container">
+                    <div class="slider-wrapper" id="indoorSlider">
+                        <!-- 카드 1~5 -->
+                        <!-- (동일: 생략 없이 원문 유지) -->
+                        <div class="slider-card">
+                            <div class="card-container">
+                                <div class="location-badge">Premium Indoor Pass</div>
+                                <div class="golf-card">
+                                    <img src="https://images.pexels.com/photos/1325735/pexels-photo-1325735.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                        alt="TopGolf Seoul" class="golf-card-image">
+                                    <div class="golf-card-content">
+                                        <div class="club-name">TopGolf Seoul</div>
+                                        <div class="pass-type">패스 가격</div>
+                                        <div class="price">$120 <span class="per-unit">/2시간</span></div>
+                                        <div class="features">
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일:
+                                                    2026년 12월 31일</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장
+                                                    (최대 6인 이용)</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>평일: 오전
+                                                    10시~오후 10시</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>주말: 오전
+                                                    9시~오후 11시</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-card">
+                            <div class="card-container">
+                                <div class="location-badge">Screen Golf Premium</div>
+                                <div class="golf-card">
+                                    <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                        alt="GolfZon Park" class="golf-card-image">
+                                    <div class="golf-card-content">
+                                        <div class="club-name">GolfZon Park</div>
+                                        <div class="pass-type">패스 가격</div>
+                                        <div class="price">$80 <span class="per-unit">/1시간</span></div>
+                                        <div class="features">
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일:
+                                                    2026년 12월 31일</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장
+                                                    (최대 4인 이용)</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>365일 24시간
+                                                    이용 가능</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>프리미엄 시뮬레이터
+                                                    & 음료 포함</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-card">
+                            <div class="card-container">
+                                <div class="location-badge">VR Golf Experience</div>
+                                <div class="golf-card">
+                                    <img src="https://images.pexels.com/photos/3621163/pexels-photo-3621163.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                        alt="Meta Golf Lounge" class="golf-card-image">
+                                    <div class="golf-card-content">
+                                        <div class="club-name">Meta Golf Lounge</div>
+                                        <div class="pass-type">패스 가격</div>
+                                        <div class="price">$150 <span class="per-unit">/3시간</span></div>
+                                        <div class="features">
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일:
+                                                    2026년 12월 31일</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장
+                                                    (최대 4인 이용)</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>VR 골프 + 실제
+                                                    퍼팅 연습장</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>프리미엄 음료 &
+                                                    간식 무제한</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-card">
+                            <div class="card-container">
+                                <div class="location-badge">Luxury Indoor Club</div>
+                                <div class="golf-card">
+                                    <img src="https://images.pexels.com/photos/7862645/pexels-photo-7862645.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                        alt="Royal Golf Studio" class="golf-card-image">
+                                    <div class="golf-card-content">
+                                        <div class="club-name">Royal Golf Studio</div>
+                                        <div class="pass-type">패스 가격</div>
+                                        <div class="price">$200 <span class="per-unit">/4시간</span></div>
+                                        <div class="features">
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일:
+                                                    2026년 12월 31일</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장
+                                                    (최대 8인 이용)</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>프라이빗 룸 + 개인
+                                                    코치</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>고급 장비 대여 +
+                                                    식사 포함</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="slider-card">
+                            <div class="card-container">
+                                <div class="location-badge">Family Golf Center</div>
+                                <div class="golf-card">
+                                    <img src="https://images.pexels.com/photos/1325735/pexels-photo-1325735.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                        alt="Happy Golf Zone" class="golf-card-image">
+                                    <div class="golf-card-content">
+                                        <div class="club-name">Happy Golf Zone</div>
+                                        <div class="pass-type">패스 가격</div>
+                                        <div class="price">$90 <span class="per-unit">/2시간</span></div>
+                                        <div class="features">
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>패스 만료일:
+                                                    2026년 12월 31일</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>최소 구매: 1장
+                                                    (가족 패키지)</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>키즈존 + 초보자
+                                                    레슨 포함</span></div>
+                                            <div class="feature-item"><span class="check-icon">✓</span><span>가족 할인 + 무료
+                                                    주차</span></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- slider-wrapper -->
+                </div> <!-- slider-container -->
+
+                <div class="slider-nav">
+                    <button class="slider-btn" id="prevBtn" onclick="moveSlide(-1)">‹</button>
+                    <div class="slider-indicators">
+                        <div class="indicator active" onclick="goToSlide(0)"></div>
+                        <div class="indicator" onclick="goToSlide(1)"></div>
+                        <div class="indicator" onclick="goToSlide(2)"></div>
+                    </div>
+                    <button class="slider-btn" id="nextBtn" onclick="moveSlide(1)">›</button>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <button class="book-now-btn">티켓 구매하기</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Coming Soon -->
+    <section class="main-content" id="comingSoonPage">
+        <div class="content-container">
+            <div class="section-header">
+                <h1 class="main-title">Coming Soon</h1>
+                <p class="subtitle">This page is under construction. Please check back later!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="site-footer__inner">
+            <span class="site-footer__brand">KC Golf Stadium</span>
+            <span class="site-footer__copy">© <span id="year"></span>. All Rights Reserved</span>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
