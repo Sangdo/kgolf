@@ -64,6 +64,22 @@
 
         // 초기화
         document.addEventListener('DOMContentLoaded', () => {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerMenu.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                hamburgerMenu.classList.toggle('active');
+            });
+
+            // Close menu when a nav item is clicked
+            document.querySelectorAll('.nav-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    hamburgerMenu.classList.remove('active');
+                });
+            });
+
             // 기본 페이지: 패스
             document.getElementById('passesPage').classList.add('active');
             updateSlider();
