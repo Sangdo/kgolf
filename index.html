@@ -17,7 +17,7 @@
     <!-- 네비게이션 -->
     <nav class="navbar">
         <div class="nav-container">
-            <div class="logo">KGolf-Time <span class="logo-subtitle">GOLF PASS</span></div>
+            <div class="logo">KGolf-Stadium <span class="logo-subtitle">GOLF PASS</span></div>
             <ul class="nav-menu">
                 <li><a class="nav-item" onclick="showPage('courses')">Golf Courses</a></li>
                 <li><a class="nav-item active" onclick="showPage('passes')">Golf Passes</a></li>
@@ -25,7 +25,8 @@
                 <li><a class="nav-item" onclick="showPage('comingSoon')">Golf Deals</a></li>
                 <li><a class="nav-item" onclick="showPage('comingSoon')">Events</a></li>
                 <li><a class="nav-item" onclick="showPage('comingSoon')">Blog</a></li>
-                <li><a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">Book Now</a>
+                <li><a class="nav-item" onclick="showPage('booking')">Booking</a></li>
+                <!-- <li><a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">Book Now</a> -->
                 </li>
             </ul>
         </div>
@@ -227,12 +228,12 @@
                         <!-- (동일: 생략 없이 원문 유지) -->
                         <div class="slider-card">
                             <div class="card-container">
-                                <div class="location-badge">Premium Indoor Pass</div>
+                                <div class="location-badge">BornTo Golf Pass</div>
                                 <div class="golf-card">
-                                    <img src="https://images.pexels.com/photos/1325735/pexels-photo-1325735.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                    <img src="data:image/jpeg;base64,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"
                                         alt="TopGolf Seoul" class="golf-card-image">
                                     <div class="golf-card-content">
-                                        <div class="club-name">TopGolf Seoul</div>
+                                        <div class="club-name">Kakao Golf</div>
                                         <div class="pass-type">패스 가격</div>
                                         <div class="price">$120 <span class="per-unit">/2시간</span></div>
                                         <div class="features">
@@ -252,12 +253,12 @@
 
                         <div class="slider-card">
                             <div class="card-container">
-                                <div class="location-badge">Screen Golf Premium</div>
+                                <div class="location-badge">KGolf Season Pass</div>
                                 <div class="golf-card">
-                                    <img src="https://images.pexels.com/photos/274422/pexels-photo-274422.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                    <img src="https://kstadiumgolf.com/wp-content/uploads/2023/02/Untitled-2.png"
                                         alt="GolfZon Park" class="golf-card-image">
                                     <div class="golf-card-content">
-                                        <div class="club-name">GolfZon Park</div>
+                                        <div class="club-name">KGolf Stadium</div>
                                         <div class="pass-type">패스 가격</div>
                                         <div class="price">$80 <span class="per-unit">/1시간</span></div>
                                         <div class="features">
@@ -277,12 +278,12 @@
 
                         <div class="slider-card">
                             <div class="card-container">
-                                <div class="location-badge">VR Golf Experience</div>
+                                <div class="location-badge">Target Golf Pass</div>
                                 <div class="golf-card">
-                                    <img src="https://images.pexels.com/photos/3621163/pexels-photo-3621163.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
+                                    <img src="https://targetindoorgolf.com/cdn/shop/files/vaughan_front.png?v=1683386482&width=1600"
                                         alt="Meta Golf Lounge" class="golf-card-image">
                                     <div class="golf-card-content">
-                                        <div class="club-name">Meta Golf Lounge</div>
+                                        <div class="club-name">Target Golf</div>
                                         <div class="pass-type">패스 가격</div>
                                         <div class="price">$150 <span class="per-unit">/3시간</span></div>
                                         <div class="features">
@@ -307,7 +308,7 @@
                                     <img src="https://images.pexels.com/photos/7862645/pexels-photo-7862645.jpeg?auto=compress&cs=tinysrgb&w=400&h=200&dpr=1"
                                         alt="Royal Golf Studio" class="golf-card-image">
                                     <div class="golf-card-content">
-                                        <div class="club-name">Royal Golf Studio</div>
+                                        <div class="club-name">EZ Golf Studio</div>
                                         <div class="pass-type">패스 가격</div>
                                         <div class="price">$200 <span class="per-unit">/4시간</span></div>
                                         <div class="features">
@@ -378,6 +379,51 @@
             </div>
         </div>
     </section>
+
+    <section class="main-content" id="bookingPage">
+        <div class="content-container">
+            <div class="section-header">
+                <h1 class="main-title">Online Booking</h1>
+                <p class="subtitle">가까운 지점을 선택해 예약하세요.</p>
+            </div>
+
+            <div class="cards-container">
+                <!-- K Stadium Golf -->
+                <div class="card-container">
+                    <div class="golf-card">
+                        <div class="golf-card-content">
+                            <div class="club-name">K Stadium Golf</div>
+                            <p>561 NorthYork Drive<br>Toronto, ON<br>M2N 9Y3</p>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- KC Golf -->
+                <div class="card-container">
+                    <div class="golf-card">
+                        <div class="golf-card-content">
+                            <div class="club-name">KC Golf</div>
+                            <p>610 Willowdale Avenue<br>Toronto, ON<br>M2N 1G7</p>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ELSJOY GOLF -->
+                <div class="card-container">
+                    <div class="golf-card">
+                        <div class="golf-card-content">
+                            <div class="club-name">ElSJOY GOLF</div>
+                            <p>ELSJOY GOLF, 1600 Steeles Ave W Unit 31<br>Concord, ON<br>L4K 4M2</p>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <!-- Footer -->
     <footer class="site-footer">

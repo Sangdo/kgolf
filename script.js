@@ -7,7 +7,8 @@
                 { id: 'coursesPage', link: 'courses' },
                 { id: 'passesPage', link: 'passes' },
                 { id: 'tripsPage', link: 'trips' },
-                { id: 'comingSoonPage', link: 'comingSoon' }
+                { id: 'comingSoonPage', link: 'comingSoon' },
+                { id: 'bookingPage', link: 'booking' } 
             ];
             // 숨기기
             pages.forEach(p => {

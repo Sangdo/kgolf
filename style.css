@@ -81,13 +81,14 @@ body {
 }
 
 .buy-now-btn {
-    background: linear-gradient(135deg, #FF8C00, #FF7F50);
-    color: #fff;
-    padding: 12px 24px;
-    border-radius: 0;
-    text-decoration: none;
-    font-weight: bold;
-    transition: transform .3s;
+  background: linear-gradient(135deg, #FF8C00, #FF7F50);
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: transform .3s;
+  margin-top: 40px; /* ✅ 버튼 위쪽 공간 추가 */
 }
 
 .buy-now-btn:hover {
@@ -296,8 +297,8 @@ body {
     margin-bottom: 20px;
 }
 
-.golf-card-content {
-    padding: 10px 0;
+.golf-card-content p {
+  margin: 6px 0; /* 각 줄 사이 살짝 여백 */
 }
 
 .club-name {
