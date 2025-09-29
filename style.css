@@ -30,9 +30,13 @@ body {
 
 /* 네비게이션 */
 .navbar {
-    background: #fff;
+    background: #000;
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
 }
 
 .nav-container {
@@ -47,12 +51,12 @@ body {
 .logo {
     font-size: 24px;
     font-weight: bold;
-    color: #515151;
+    color: #fff;
 }
 
 .logo-subtitle {
     font-size: 12px;
-    color: #666;
+    color: #ccc;
     font-weight: normal;
 }
 
@@ -64,7 +68,7 @@ body {
 }
 
 .nav-item {
-    color: #666;
+    color: #fff;
     text-decoration: none;
     font-size: 16px;
     transition: color .3s;
@@ -76,7 +80,7 @@ body {
 }
 
 .nav-item.active {
-    color: #00BFFF;
+    color: #FF8C00;
     font-weight: bold;
 }
 
@@ -109,7 +113,7 @@ body {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: #333;
+    background-color: #fff;
     margin: 5px 0;
     transition: transform 0.3s, opacity 0.3s;
 }
@@ -196,6 +200,67 @@ body {
     display: block !important;
 }
 
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;   /* 바깥으로 넘치는 이미지 숨기기 */
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  background: rgba(0,0,0,0.5); /* 반투명 배경 */
+  border: none;
+  cursor: pointer;
+  z-index: 10; /* ✅ 이미지보다 위로 */
+  border-radius: 50%;
+}
+
+.arrow.left {
+  left: 20px;  /* 왼쪽 위치 */
+}
+
+.arrow.right {
+  right: 20px; /* 오른쪽 위치 */
+}
+
+.arrow::before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border-top: 4px solid #fff;   /* 흰색 화살표 */
+  border-right: 4px solid #fff;
+}
+
+.arrow.left::before {
+  transform: rotate(-135deg);
+}
+
+.arrow.right::before {
+  transform: rotate(45deg);
+}
+
+
+/* 슬라이드 컨테이너 */
+.slides {
+    display: flex;                 /* 가로 배치 */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* 슬라이드 안의 이미지 */
+.slides img {
+    flex: 0 0 calc(100% / 3);      /* 한 화면에 3장 보여주기 */
+    max-width: calc(100% / 3); /* ✅ 혹시 flex 적용 안될 때 대비 */
+    height: 400px;                 /* 원하는 높이 */
+    object-fit: cover;             /* 비율 유지 */
+    padding: 0 5px;                /* 여백 */
+    box-sizing: border-box;
+}
 /* 카드/슬라이더 */
 .slider-container {
     position: relative;
@@ -397,6 +462,67 @@ body {
     box-shadow: 0 12px 30px rgba(255, 140, 0, .4);
 }
 
+/* Hero Page */
+.hero-page {
+    display: none;
+    background: #fff;
+    color: #333;
+    min-height: 100vh;
+    padding: 0;
+}
+
+.hero-page.active {
+    display: block;
+}
+
+.hero-video {
+    position: relative;
+    width: 100%;
+    height: 85dvh;
+    overflow: hidden;
+    margin-bottom: 0;
+}
+
+.hero-video video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.hero-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 1;
+    padding: 0 16px;
+    color: #fff;
+    text-shadow: 0 4px 20px rgba(0, 0, 0, .75);
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.05) 0%,
+            rgba(0, 0, 0, 0.10) 50%,
+            rgba(0, 0, 0, 0.35) 100%);
+    bottom: 12dvh;
+}
+
+.hero-title {
+    font-size: clamp(48px, 6vw, 96px);
+    font-weight: 800;
+    margin: 0 0 10px;
+    line-height: 1.1;
+}
+
+.hero-subtitle {
+    font-size: clamp(18px, 2.4vw, 34px);
+    font-weight: 500;
+    line-height: 1.35;
+    opacity: .95;
+}
+
+
 /* Golf Courses */
 .courses-page {
     display: none;
@@ -449,17 +575,17 @@ body {
             rgba(0, 0, 0, 0.05) 0%,
             rgba(0, 0, 0, 0.10) 50%,
             rgba(0, 0, 0, 0.35) 100%);
-    transform: translateY(-12dvh);
-    /* ← 위로 12dvh 올리기 */
+    bottom: 12dvh;
 }
 
 @media (max-width: 768px) {
     .courses-hero-text {
-        transform: translateY(-6dvh);
+        bottom: 6dvh;
     }
 
     /* 모바일은 조금만 */
 }
+
 
 .courses-title {
     font-size: clamp(48px, 6vw, 96px);
@@ -475,15 +601,40 @@ body {
     opacity: .95;
 }
 
+/* Light 선언 */
+@font-face {
+  font-family: "Avenir LT W01";
+  src: url("https://static.parastorage.com/fonts/v2/af36905f-3c92-4ef9-b0c1-f91432f16ac1/v1/avenir-lt-w01_35-light1475496.woff2") format("woff2");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Avenir LT W01";
+  src: url("https://static.parastorage.com/fonts/v2/74290729-59ae-4129-87d0-2eec3974dce1/v1/avenir-lt-w01_85-heavy1475544.woff2") format("woff2");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+
 .courses-content {
     max-width: 1200px;
     margin: 0 auto;
-    display: grid;
+    /* display: grid; */
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
     padding: 80px 20px;
     background: #fff;
+
+    font-family: "Avenir LT W01", Arial, sans-serif;
+    font-weight: 500;
+    -webkit-font-smoothing: antialiased; /* 크롬/사파리 글자 부드럽게 */
+    -moz-osx-font-smoothing: grayscale; /* 파이어폭스(macOS) */
+    color: rgb(35, 34, 34); 
+    text-align: center;
 }
 
 .courses-image {
@@ -578,6 +729,23 @@ body {
 
 .courses-btn:hover {
     transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #FF8C00, #FF7F50);
+    color: #fff;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(255, 140, 0, 0.3);
 }
 
 /* Trips */
@@ -827,6 +995,225 @@ body {
 }
 
 /* Footer (modern black tone) */
+/* KGOLF Simulator Technology Section */
+.kgtech-section {
+    display: none;
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.kgtech-section.active {
+    display: block;
+}
+
+.kgtech-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.kgtech-eyebrow {
+    font-size: 16px;
+    color: #FF8C00;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-bottom: 10px;
+}
+
+.kgtech-title {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kgtech-subtitle {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.kgtech-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.kgtech-card {
+    background: #f8f8f8;
+    padding: 30px;
+    border: 1px solid #eee;
+    transition: all .3s ease;
+}
+
+.kgtech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.kgtech-card h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.kgtech-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kgtech-card ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.kgtech-card li {
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.kgtech-card li:before {
+    content: "✓";
+    color: #00C851;
+    position: absolute;
+    left: -20px;
+}
+
+.kgtech-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.kgtech-split-text h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kgtech-split-text p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kgtech-bullets {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.kgtech-bullets li {
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.kgtech-bullets li:before {
+    content: "→";
+    color: #FF8C00;
+    position: absolute;
+    left: -20px;
+}
+
+.kgtech-split-media img {
+    width: 100%;
+    height: auto;
+}
+
+.kgtech-specs {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.kgtech-specs h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.kgtech-specgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.kgtech-specgrid h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.kgtech-specgrid ul {
+    list-style: none;
+}
+
+.kgtech-specgrid li {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.kgtech-cta {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.kgtech-cta h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kgtech-cta p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.kgtech-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kgtech-btn {
+    background: linear-gradient(135deg, #FF8C00, #FF7F50);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.kgtech-btn:hover {
+    transform: translateY(-2px);
+}
+
+.kgtech-btn--ghost {
+    background: transparent;
+    border: 2px solid #FF8C00;
+    color: #FF8C00;
+}
+
+.kgtech-btn--ghost:hover {
+    background: #FF8C00;
+    color: #fff;
+}
+
+.spin-track-image {
+    max-width: 300px;
+    margin: 10px 0;
+}
+
+
 .site-footer {
     background: #0b0b0b;
     /* 거의 블랙 */
@@ -872,6 +1259,19 @@ body {
     color: #fff;
 }
 
+.image-row {
+    display: flex;               /* 가로 정렬 */
+    justify-content: center;     /* 가운데 정렬 */
+    margin-top: 20px;
+    flex-wrap: wrap;             /* 화면이 좁으면 자동 줄바꿈 */
+}
+
+.image-row img {
+    max-width: 45%;  /* 두 장이 가로로 들어가도록 */
+    height: auto;
+}
+
+
 @media (max-width:768px) {
     .site-footer__inner {
         padding: 24px 16px;
@@ -885,134 +1285,4 @@ body {
 }
 
 
-/* ===== Footer ===== */
-.footer {
-    background: #0b0b0b;
-    color: #cfcfcf;
-    border-top: 1px solid rgba(255, 255, 255, .08);
-}
 
-.footer-inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 56px 20px 28px;
-}
-
-.footer-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 1.2fr 1.6fr;
-    gap: 64px;
-    align-items: start;
-}
-
-.footer h4 {
-    color: #f5f5f5;
-    font-size: 20px;
-    letter-spacing: .25em;
-    font-weight: 700;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-}
-
-.footer ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.footer li+li {
-    margin-top: 14px;
-}
-
-.footer a {
-    color: #ddd;
-    text-decoration: none;
-    transition: opacity .2s ease, color .2s ease;
-}
-
-.footer a:hover {
-    color: #fff;
-}
-
-.footer p {
-    color: #c9c9c9;
-    margin: 0 0 20px;
-}
-
-/* newsletter */
-.footer-form {
-    position: relative;
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin: 16px 0 22px;
-    padding-bottom: 12px;
-    border-bottom: 2px solid rgba(255, 255, 255, .7);
-}
-
-.footer-form input {
-    flex: 1;
-    background: transparent;
-    border: none;
-    color: #fff;
-    outline: none;
-    font: inherit;
-    font-size: 16px;
-}
-
-.footer-form input::placeholder {
-    color: #bdbdbd;
-}
-
-.footer-form button {
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-    line-height: 0;
-    color: #fff;
-    opacity: .9;
-}
-
-.footer-form button:hover {
-    opacity: 1;
-}
-
-/* social */
-.footer-social {
-    display: flex;
-    gap: 18px;
-    margin-top: 6px;
-}
-
-.footer-social a {
-    width: 36px;
-    height: 36px;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(255, 255, 255, .25);
-    border-radius: 8px;
-}
-
-.footer-social a:hover {
-    border-color: #fff;
-}
-
-/* bottom */
-.footer-bottom {
-    text-align: center;
-    color: #bdbdbd;
-    margin-top: 48px;
-    padding-top: 22px;
-    border-top: 1px solid rgba(255, 255, 255, .08);
-    font-size: 14px;
-}
-
-/* responsive */
-@media (max-width: 900px) {
-    .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-}

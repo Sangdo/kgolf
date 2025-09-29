@@ -24,18 +24,124 @@
                 <span class="hamburger-line"></span>
             </button>
             <ul class="nav-menu">
-                <li><a class="nav-item" onclick="showPage('courses')">Golf Courses</a></li>
+                <li><a class="nav-item" onclick="showPage('courses')">Home</a></li>
+                <li><a class="nav-item" onclick="showPage('tech')">Technology</a></li>
                 <li><a class="nav-item active" onclick="showPage('passes')">Golf Passes</a></li>
                 <li><a class="nav-item" onclick="showPage('trips')">Golf Trips</a></li>
                 <li><a class="nav-item" onclick="showPage('comingSoon')">Golf Deals</a></li>
                 <li><a class="nav-item" onclick="showPage('comingSoon')">Events</a></li>
                 <!-- <li><a class="nav-item" onclick="showPage('comingSoon')">Blog</a></li> -->
-                <li><a class="nav-item" onclick="showPage('booking')">Booking</a></li>
+                <li><a class="nav-item" onclick="showPage('booking')">Book Now</a></li>
                 <!-- <li><a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">Book Now</a> -->
                 </li>
             </ul>
         </div>
     </nav>
+
+
+    <!-- KGOLF Simulator Technology (Target-style) -->
+    <section id="kgtech" class="kgtech-section">
+
+        <!-- Intro / Hero -->
+        <div class="kgtech-hero">
+            <h2 class="kgtech-eyebrow">KGOLF Simulator Technology</h2>
+            <h3 class="kgtech-title">Dual High-Speed Cameras with Vision-AI Impact Analysis</h3>
+            <p class="kgtech-subtitle">
+                Frame-by-frame optical tracking, AI-powered swing understanding, and launch-monitor grade metrics—
+                engineered for tour-level indoor golf.
+            </p>
+        </div>
+
+        <!-- Feature Highlights -->
+        <div class="kgtech-highlights">
+            <div class="kgtech-card">
+                <h4>High-Speed Dual Camera System</h4>
+                <p>Two synchronized optical sensors capture the ball and club through impact for true 3D flight
+                    reconstruction.</p>
+                <ul>
+                    <li>Full-flight capture from launch to apex</li>
+                    <li>Impact window imaging (pre → at → post)</li>
+                    <li>Sub-frame timing for spin/axis stability</li>
+                </ul>
+            </div>
+            <div class="kgtech-card">
+                <h4>Vision-AI Impact Analysis</h4>
+                <p>Computer vision models segment club/ball trajectories and estimate contact physics in real time.</p>
+                <ul>
+                    <li>Club path, face angle, AoA estimation</li>
+                    <li>Ball spin (back/side) & spin axis</li>
+                    <li>Quality-of-strike indicators</li>
+                </ul>
+            </div>
+            <div class="kgtech-card">
+                <h4>4K Simulation & Course Play</h4>
+                <p>Ultra-HD rendering with physically-based ballistics tuned to measured launch data.</p>
+                <ul>
+                    <li>Realistic aerodynamics & ground interaction</li>
+                    <li>Range, approach, putting, short game</li>
+                    <li>Online play, events, leaderboards</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Impact / Vision Section -->
+        <div class="kgtech-split">
+            <div class="kgtech-split-text">
+                <h3>Impact Window, Under the Microscope</h3>
+                <p>
+                    KGOLF isolates the 200–400 ms impact window and fuses dual-camera frames to stabilize spin, launch,
+                    and
+                    club parameters. The result is consistent dispersion modeling that mirrors on-course ball flight.
+                </p>
+                <ul class="kgtech-bullets">
+                    <li>Multi-angle swing capture (optional side/rear cams)</li>
+                    <li>Auto-calibration & self-check routines</li>
+                    <li>Low-latency feedback for coaching and play</li>
+                </ul>
+            </div>
+            <div class="kgtech-split-media">
+                <img src="https://static.wixstatic.com/media/0655d6_39fcfb629b2e4cf38365e5f2f6d7ceaa~mv2.png/v1/crop/x_38,y_0,w_1886,h_1212/fill/w_794,h_510,al_c,q_90,usm_0.66_1.00_0.01,enc_avif,quality_auto/Picture1.png"
+                    alt="KGOLF impact analysis visualization" />
+            </div>
+        </div>
+
+        <!-- Spin Track Section -->
+        <div class="kgtech-split">
+            <div class="kgtech-split-text">
+                <h3>Patent of Spin tracking</h3>
+                <p>Patented Spin Track technology</p>
+                <ul class="kgtech-bullets">
+                    <li>Tracks spin using a specially patterned golf ball</li>
+                    <li>Dual cameras capture precise ball rotation and flight</li>
+                    <li>Accurately renders slice, hook, fade, draw, and approach shots</li>
+                </ul>
+            </div>
+            <div class="kgtech-split-media">
+                <img class="spin-track-image"
+                    src="https://static.wixstatic.com/media/deaf80_22ee66a148894ec4993f155c2b604950~mv2.gif"
+                    alt="Spin Track Technology" />
+            </div>
+        </div>
+
+        <!-- Tech Specs -->
+        <div class="kgtech-specs">
+
+
+            <div class="kgtech-specgrid">
+
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div class="kgtech-cta">
+            <h3>Ready to Play?</h3>
+            <p></p>
+            <div class="kgtech-actions">
+                <a href="#contact" class="kgtech-btn">Book Now</a>
+
+            </div>
+        </div>
+    </section>
 
     <!-- Golf Courses -->
     <section class="courses-page" id="coursesPage">
@@ -45,37 +151,90 @@
                 <source
                     src="https://video.wixstatic.com/video/0655d6_3b4f08c35d5d488b842a3c43f0e48211/720p/mp4/file.mp4"
                     type="video/mp4">
-                브라우저가 비디오를 지원하지 않습니다.
+                Your browser does not support the video tag.
             </video>
             <div class="courses-hero-text">
                 <h1 class="courses-title">KC Golf Stadium</h1>
-                <p class="courses-subtitle">프리미엄 실내 골프 경험의 새로운 기준</p>
+                <p class="courses-subtitle">The New Standard for Premium Indoor Golf</p>
             </div>
         </div>
 
         <div class="courses-content">
+            <h2>Experience World-Class Golf Without Leaving the City</h2>
+            <p>At KGolf Indoor, we bring the best of golf to you with cutting-edge simulators, luxurious amenities,
+                and expert coaching. Whether you're a beginner or a seasoned pro, our state-of-the-art facilities offer
+                something for every golfer.</p>
+
+            <div class="image-row">
+                <img src="https://static.wixstatic.com/media/57cbb9_2e6a297eb8844265a264051143af8d67~mv2.jpg/v1/crop/x_10,y_0,w_1899,h_1080/fill/w_1152,h_656,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/AI_Image(Driver).jpg"
+                    alt="Golf Simulation">
+
+                <img src="https://static.wixstatic.com/media/57cbb9_543ce100c69a469790c664dcc2788bcc~mv2.jpg/v1/fill/w_681,h_404,al_c,lg_1,q_80,enc_avif,quality_auto/57cbb9_543ce100c69a469790c664dcc2788bcc~mv2.jpg"
+                    alt="Golf Facility">
+            </div>
+        </div>
+
+        <div class="courses-content">
+            <h1 class="main-title" style="text-align: center;">Professional Golf Simulator Software.</h1>
+            <p>
+                Frame-by-frame optical tracking, AI-powered swing understanding, and launch-monitor grade metrics—
+                engineered for tour-level indoor golf.
+            </p>
+        </div>
+
+        <!-- 슬라이드 -->
+        <!-- 슬라이드 -->
+        <div class="carousel">
+            <button class="arrow left" onclick="prevSlide()"></button>
+            <div class="slides" id="slides">
+                <img src="https://static.wixstatic.com/media/0655d6_a05c9eff136a4643ab631449e04e7a89~mv2.jpg"
+                    alt="slide1">
+                <img src="https://static.wixstatic.com/media/0655d6_8a3b2fde36374a8a82754d36c306418c~mv2.jpg"
+                    alt="slide2">
+                <img src="https://static.wixstatic.com/media/0655d6_4e7db1045fe84451b9946151aaf9e2c6~mv2.jpg"
+                    alt="slide3">
+                <img src="https://static.wixstatic.com/media/0655d6_ba4983235f5d485db2446f5420b9347b~mv2.jpg"
+                    alt="slide4">
+                <img src="https://static.wixstatic.com/media/0655d6_6467c163b49f43bb8c2ec6d2bb517020~mv2.jpg"
+                    alt="slide5">
+                <img src="https://static.wixstatic.com/media/0655d6_f2bcc66e5b7b4cccb5794090cac09cc3~mv2.jpg"
+                    alt="slide6">
+                <img src="https://static.wixstatic.com/media/0655d6_b2f0885293b241679b1dfeaa0d07734f~mv2.jpg"
+                    alt="slide7">
+                <img src="https://static.wixstatic.com/media/0655d6_63d7b218f2064eb2a500198cd144a8cd~mv2.jpg"
+                    alt="slide8">
+            </div>
+            <button class="arrow right" onclick="nextSlide()"></button>
+        </div>
+
+
+        <!-- <div class="courses-content">
             <div class="courses-image">
                 <video autoplay muted loop playsinline style="width:100%; height:400px; object-fit:cover;">
                     <source
                         src="https://video.wixstatic.com/video/0655d6_b92fc025b4a549de9aec48b3962ea74a/480p/mp4/file.mp4"
                         type="video/mp4">
-                    브라우저가 비디오를 지원하지 않습니다.
+                    Your browser does not support the video tag.
                 </video>
-            </div>
+            </div> -->
 
-            <div class="courses-info">
-                <h3>최첨단 실내 골프 시설</h3>
-                <p>K Golf Indoor는 최신 기술과 럭셔리한 환경이 결합된 프리미엄 실내 골프 시설입니다. 실제 골프장과 같은 경험을 실내에서 즐기실 수 있습니다.</p>
+
+        <!-- <div class="courses-info">
+                <h3>State-of-the-Art Indoor Golf</h3>
+                <p>KGolf Indoor combines the latest technology with luxury environments to deliver a premium indoor golf
+                    experience. Enjoy the realism of world-class golf courses without leaving the city.</p>
                 <ul class="courses-features">
-                    <li>4K 초고화질 스크린 골프 시뮬레이터</li>
-                    <li>세계 유명 골프장 100+ 코스</li>
-                    <li>프리미엄 클럽 하우스 & 라운지</li>
-                    <li>개인 레슨 및 그룹 레슨 프로그램</li>
-                    <li>24시간 운영 (연중무휴)</li>
-                    <li>프리미엄 장비 렌탈 서비스</li>
+                    <li>4K Ultra-HD Golf Simulator Screens</li>
+                    <li>100+ World-Famous Courses</li>
+                    <li>Luxury Clubhouse & Lounge</li>
+                    <li>Private & Group Lesson Programs</li>
+                    <li>Open 24/7 All Year Round</li>
+                    <li>Premium Equipment Rental Service</li>
                 </ul>
-                <div class="courses-cta"></div>
-            </div>
+                <div class="courses-cta">
+                    <a href="#contact" class="btn-primary">Book Now</a>
+                </div>
+            </div> -->
         </div>
     </section>
 
@@ -399,7 +558,8 @@
                         <div class="golf-card-content">
                             <div class="club-name">K Stadium Golf</div>
                             <p>561 NorthYork Drive<br>Toronto, ON<br>M2N 9Y3</p>
-                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK
+                                NOW</a>
                         </div>
                     </div>
                 </div>
@@ -410,7 +570,8 @@
                         <div class="golf-card-content">
                             <div class="club-name">KC Golf</div>
                             <p>610 Willowdale Avenue<br>Toronto, ON<br>M2N 1G7</p>
-                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK
+                                NOW</a>
                         </div>
                     </div>
                 </div>
@@ -421,7 +582,8 @@
                         <div class="golf-card-content">
                             <div class="club-name">ElSJOY GOLF</div>
                             <p>ELSJOY GOLF, 1600 Steeles Ave W Unit 31<br>Concord, ON<br>L4K 4M2</p>
-                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK NOW</a>
+                            <a href="https://kstadiumgolf.skedda.com/booking" target="_blank" class="buy-now-btn">BOOK
+                                NOW</a>
                         </div>
                     </div>
                 </div>
