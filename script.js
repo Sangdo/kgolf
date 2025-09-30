@@ -85,7 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  document.getElementById('coursesPage').classList.add('active');
+    // 기본 페이지: 홈 (coursesPage)
+    document.getElementById('coursesPage').classList.add('active');
+    // Highlight the corresponding nav item
+    document.querySelector('.nav-item[onclick="showPage(\'courses\')"]').classList.add('active');
 
   // 슬라이더 초기 표시
   showSlide(0);
