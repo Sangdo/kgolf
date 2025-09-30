@@ -201,64 +201,80 @@ body {
 }
 
 
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;   /* 바깥으로 넘치는 이미지 숨기기 */
+.carousel-wrapper {
+  background: #111; /* 검은 배경을 제목 + 슬라이드 모두 감싸도록 */
+  color: white;
+  padding: 40px 20px;
 }
 
+.carousel-title {
+  text-align: center;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.carousel {
+  position: relative;   /* 버튼 위치 기준 */
+  width: 100%;
+  overflow: hidden;     /* 넘치는 이미지 숨김 */
+}
+/* ✅ 교체된 화살표 */
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 60px;
-  height: 60px;
-  background: rgba(0,0,0,0.5); /* 반투명 배경 */
+  width: 80px;
+  height: 80px;
+  background: none; /* 투명 배경 */
   border: none;
   cursor: pointer;
-  z-index: 10; /* ✅ 이미지보다 위로 */
-  border-radius: 50%;
-}
-
-.arrow.left {
-  left: 20px;  /* 왼쪽 위치 */
-}
-
-.arrow.right {
-  right: 20px; /* 오른쪽 위치 */
-}
-
-.arrow::before {
-  content: '';
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  border-top: 4px solid #fff;   /* 흰색 화살표 */
-  border-right: 4px solid #fff;
+  z-index: 10;
 }
 
 .arrow.left::before {
-  transform: rotate(-135deg);
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-left: 8px solid white;
+  border-bottom: 8px solid white;
+  transform: rotate(45deg);
+  margin: auto;
 }
 
 .arrow.right::before {
-  transform: rotate(45deg);
+  content: "";
+  display: block;
+  width: 40px;
+  height: 40px;
+  border-right: 8px solid white;
+  border-bottom: 8px solid white;
+  transform: rotate(-45deg);
+  margin: auto;
 }
 
+.arrow.left {
+  left: 30px;
+}
+
+.arrow.right {
+  right: 30px;
+}
 
 /* 슬라이드 컨테이너 */
 .slides {
-    display: flex;                 /* 가로 배치 */
+    display: flex;
     transition: transform 0.3s ease-in-out;
 }
 
-/* 슬라이드 안의 이미지 */
+/* 슬라이드 이미지 */
 .slides img {
-    flex: 0 0 calc(100% / 3);      /* 한 화면에 3장 보여주기 */
-    max-width: calc(100% / 3); /* ✅ 혹시 flex 적용 안될 때 대비 */
-    height: 400px;                 /* 원하는 높이 */
-    object-fit: cover;             /* 비율 유지 */
-    padding: 0 5px;                /* 여백 */
+    flex: 0 0 calc(100% / 3);
+    max-width: calc(100% / 3);
+    height: 400px;
+    object-fit: cover;
+    padding: 0 2px;
     box-sizing: border-box;
 }
 /* 카드/슬라이더 */
@@ -1284,5 +1300,76 @@ body {
     }
 }
 
+.swing-section {
+  display: flex;
+  align-items: center;      /* 세로 중앙 정렬 */
+  justify-content: space-between;
+  gap: 60px;                /* 텍스트와 이미지 사이 간격 */
+  padding: 10px 10%;
+  background: #111;
+  color: white;
+  min-height: 600px;        /* 섹션 높이 강제 확보 */
+  box-sizing: border-box;
+}
 
+.swing-text {
+  flex: 1;
+  max-width: 500px;         /* 텍스트 폭 제한 */
+}
 
+.swing-text h2 {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.swing-text h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.swing-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.swing-images {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;       /* 이미지 가운데 정렬 */
+}
+
+.swing-images img {
+  max-width: 100%;           /* 이미지 크기 줄이기 */
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.swing-images img:nth-child(2) {
+  margin-left: -450px;      /* 🔥 오른쪽으로 겹치기 */
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .swing-section {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding: 60px 5%;
+  }
+
+  .swing-images {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .swing-images img {
+    max-width: 45%;
+  }
+}

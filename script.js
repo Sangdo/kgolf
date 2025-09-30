@@ -1,174 +1,95 @@
-let currentSlide = 0;
-
-// 페이지 전환(클래스+스타일 함께)
+// 페이지 전환
 function showPage(pageName) {
-    const pages = [
-        { id: 'coursesPage', link: 'courses' }, { id: 'kgtech', link: 'tech' },
-        { id: 'passesPage', link: 'passes' },
-        { id: 'tripsPage', link: 'trips' },
-        { id: 'comingSoonPage', link: 'comingSoon' },
-        { id: 'bookingPage', link: 'booking' }
-    ];
-    const additionalContent = document.querySelector('.courses-additional-content');
+  const pages = [
+    { id: 'coursesPage', link: 'courses' }, { id: 'kgtech', link: 'tech' },
+    { id: 'passesPage', link: 'passes' },
+    { id: 'tripsPage', link: 'trips' },
+    { id: 'comingSoonPage', link: 'comingSoon' },
+    { id: 'bookingPage', link: 'booking' }
+  ];
+  const additionalContent = document.querySelector('.courses-additional-content');
 
-    // Hide all pages and additional content first
-    pages.forEach(p => {
-        const el = document.getElementById(p.id);
-        if (el) {
-            el.style.display = 'none';
-            el.classList.remove('active');
-        }
-    });
-    if (additionalContent) {
-        additionalContent.style.display = 'none';
+  pages.forEach(p => {
+    const el = document.getElementById(p.id);
+    if (el) {
+      el.style.display = 'none';
+      el.classList.remove('active');
     }
+  });
+  if (additionalContent) additionalContent.style.display = 'none';
 
-    // Deactivate all nav items
-    document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
 
-    // Show the selected page
-    const page = pages.find(p => p.link === pageName);
-    if (page) {
-        const target = document.getElementById(page.id);
-        if (target) {
-            target.style.display = 'block';
-            target.classList.add('active');
-        }
+  const page = pages.find(p => p.link === pageName);
+  if (page) {
+    const target = document.getElementById(page.id);
+    if (target) {
+      target.style.display = 'block';
+      target.classList.add('active');
     }
-
-    // If it's the courses page, show the additional content
-    if (pageName === 'courses') {
-        if (additionalContent) {
-            additionalContent.style.display = 'block';
-        }
-    }
-
-    // Activate the clicked nav item
-    if (event && event.target) event.target.classList.add('active');
+  }
+  if (pageName === 'courses' && additionalContent) {
+    additionalContent.style.display = 'block';
+  }
+  if (event && event.target) event.target.classList.add('active');
 }
+
 // 탭
 function showTab(tabName) {
-    document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
-    document.getElementById(tabName).classList.add('active');
-    document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-    if (event && event.target) event.target.classList.add('active');
-
-    // 실내 탭에서 슬라이더 업데이트
-    // if (tabName === 'indoor') setTimeout(updateSlider, 100);
+  document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+  document.getElementById(tabName).classList.add('active');
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  if (event && event.target) event.target.classList.add('active');
 }
 
-// Generic Slider Functionality
-function createSlider(sliderId, slidesPerView = 1) {
-    let currentSlide = 0;
-    const slidesContainer = document.getElementById(sliderId);
-    if (!slidesContainer) return;
+// 🔥 슬라이더 (courses 전용)
+const slides = document.getElementById("slides");
+const totalSlides = slides ? slides.children.length : 0;
+const perView = 3;
+let index = 0;
 
-    const slides = Array.from(slidesContainer.children);
-    const totalSlides = slides.length;
-    const totalPages = Math.ceil(totalSlides / slidesPerView);
-
-    function updateSlider() {
-        slidesContainer.style.transform = `translateX(${-currentSlide * (100 / slidesPerView)}%)`;
-
-        // Update active class for individual slides (optional, if you want to highlight visible slides)
-        slides.forEach((slide, i) => {
-            if (i >= currentSlide * slidesPerView && i < (currentSlide + 1) * slidesPerView) {
-                slide.classList.add('active');
-            } else {
-                slide.classList.remove('active');
-            }
-        });
-    }
-
-    window[`nextSlide_${sliderId}`] = () => {
-        currentSlide = (currentSlide + 1) % totalPages;
-        updateSlider();
-    };
-
-    window[`prevSlide_${sliderId}`] = () => {
-        currentSlide = (currentSlide - 1 + totalPages) % totalPages;
-        updateSlider();
-    };
-
-    updateSlider(); // Initial display
+function showSlide(i) {
+  const maxIndex = totalSlides - perView;
+  if (i > maxIndex) {
+    index = 0;
+  } else if (i < 0) {
+    index = maxIndex;
+  } else {
+    index = i;
+  }
+  slides.style.transform = `translateX(${-index * (100 / perView)}%)`;
 }
 
-// Indoor Slider Specific Functionality
-function createIndoorSlider(sliderId, slidesPerView = 3) {
-    let currentSlide = 0;
-    const slider = document.getElementById(sliderId);
-    if (!slider) return;
+function nextSlide() {
+  showSlide(index + 1);
+}
 
-    const slides = Array.from(slider.children);
-    const totalSlides = slides.length;
-    const totalPages = Math.ceil(totalSlides / slidesPerView);
-
-    function updateSlider() {
-        const slideWidth = slider.children[0].offsetWidth; // Get width of a single slide
-        const gap = parseFloat(getComputedStyle(slider).gap); // Get gap between slides
-        const totalCardWidth = slideWidth + gap;
-
-        const translateX = -currentSlide * totalCardWidth;
-        slider.style.transform = `translateX(${translateX}px)`;
-
-        const indicatorsContainer = document.querySelector('.slider-indicators');
-        if (indicatorsContainer) {
-            indicatorsContainer.innerHTML = ''; // Clear existing indicators
-            for (let i = 0; i < totalPages; i++) {
-                const indicator = document.createElement('div');
-                indicator.classList.add('indicator');
-                if (i === currentSlide) {
-                    indicator.classList.add('active');
-                }
-                indicator.onclick = () => {
-                    currentSlide = i;
-                    updateSlider();
-                };
-                indicatorsContainer.appendChild(indicator);
-            }
-        }
-
-        document.getElementById('prevBtn').disabled = currentSlide === 0;
-        document.getElementById('nextBtn').disabled = currentSlide >= totalPages - 1;
-    }
-
-    document.getElementById('prevBtn').onclick = () => {
-        currentSlide = (currentSlide - 1 + totalPages) % totalPages;
-        updateSlider();
-    };
-
-    document.getElementById('nextBtn').onclick = () => {
-        currentSlide = (currentSlide + 1) % totalPages;
-        updateSlider();
-    };
-
-    updateSlider(); // Initial display
+function prevSlide() {
+  showSlide(index - 1);
 }
 
 // 초기화
 document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('.nav-menu');
+  const hamburgerMenu = document.querySelector('.hamburger-menu');
+  const navMenu = document.querySelector('.nav-menu');
 
-    hamburgerMenu.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        hamburgerMenu.classList.toggle('active');
+  hamburgerMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    hamburgerMenu.classList.toggle('active');
+  });
+
+  document.querySelectorAll('.nav-item').forEach(item => {
+    item.addEventListener('click', () => {
+      navMenu.classList.remove('active');
+      hamburgerMenu.classList.remove('active');
     });
+  });
 
-    // Close menu when a nav item is clicked
-    document.querySelectorAll('.nav-item').forEach(item => {
-        item.addEventListener('click', () => {
-            navMenu.classList.remove('active');
-            hamburgerMenu.classList.remove('active');
-        });
-    });
+  document.getElementById('coursesPage').classList.add('active');
 
-    // 기본 페이지: 홈 (coursesPage)
-    document.getElementById('coursesPage').classList.add('active');
-
-    // Initialize sliders
-    createSlider('slides', 3); // For the courses page carousel, showing 3 slides
-    createIndoorSlider('indoorSlider', 3); // For the indoor golf passes slider
+  // 슬라이더 초기 표시
+  showSlide(0);
 });
+
 // Footer 연도 자동 업데이트
 document.getElementById('year').textContent = new Date().getFullYear();
