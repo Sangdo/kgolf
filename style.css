@@ -125,8 +125,7 @@ body {
 /* 메인 콘텐츠(패스 페이지) */
 .main-content {
     background: #fff;
-    padding: 80px 20px;
-    padding-top: 130px;
+    padding: 150px 20px 80px;
     display: none;
 }
 
@@ -912,6 +911,345 @@ body {
     transform: translateY(-2px);
 }
 
+
+/* KGOLF Simulator Technology Section */
+.kgtech-section {
+    display: none;
+    padding: 80px 20px;
+    background: #fff;
+}
+
+.kgtech-section.active {
+    display: block;
+}
+
+.kgtech-hero {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 60px;
+}
+
+.kgtech-eyebrow {
+    font-size: 16px;
+    color: #FF8C00;
+    text-transform: uppercase;
+    letter-spacing: .2em;
+    margin-bottom: 10px;
+}
+
+.kgtech-title {
+    font-family: "Bebas Neue", Impact, sans-serif;
+    font-size: 48px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kgtech-subtitle {
+    font-size: 18px;
+    color: #666;
+    line-height: 1.6;
+}
+
+.kgtech-highlights {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 80px;
+}
+
+.kgtech-card {
+    background: #f8f8f8;
+    padding: 30px;
+    border: 1px solid #eee;
+    transition: all .3s ease;
+}
+
+.kgtech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+}
+
+.kgtech-card h4 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.kgtech-card p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kgtech-card ul {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.kgtech-card li {
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.kgtech-card li:before {
+    content: "✓";
+    color: #00C851;
+    position: absolute;
+    left: -20px;
+}
+
+.kgtech-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 30px;
+    padding: 30px;
+    border: 1px solid #eee;
+}
+
+.kgtech-split-text h3 {
+    font-size: 32px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.kgtech-split-text p {
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.kgtech-bullets {
+    list-style: none;
+    padding-left: 20px;
+}
+
+.kgtech-bullets li {
+    color: #666;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.kgtech-bullets li:before {
+    content: "✓";
+    color: #00C851;
+    position: absolute;
+    left: -20px;
+}
+
+.kgtech-split-media img {
+    width: 100%;
+    height: auto;
+}
+
+.kgtech-specs {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    text-align: center;
+}
+
+.kgtech-specs h3 {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+.kgtech-specgrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.kgtech-specgrid h5 {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.kgtech-specgrid ul {
+    list-style: none;
+}
+
+.kgtech-specgrid li {
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.kgtech-cta {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.kgtech-cta h3 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.kgtech-cta p {
+    color: #666;
+    margin-bottom: 30px;
+}
+
+.kgtech-actions {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.kgtech-btn {
+    background: linear-gradient(135deg, #FF8C00, #FF7F50);
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all .3s ease;
+}
+
+.kgtech-btn:hover {
+    transform: translateY(-2px);
+}
+
+.kgtech-btn--ghost {
+    background: transparent;
+    border: 2px solid #FF8C00;
+    color: #FF8C00;
+}
+
+.kgtech-btn--ghost:hover {
+    background: #FF8C00;
+    color: #fff;
+}
+
+.spin-track-image {
+    max-width: 450px;
+    margin: 10px 0;
+}
+
+.site-footer {
+    background: #0b0b0b;
+    color: #cfcfcf;
+    border-top: 1px solid rgba(255, 255, 255, .08);
+    font-family: 'League Spartan', sans-serif;
+}
+
+.site-footer__inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 28px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    text-align: center;
+}
+
+.site-footer__brand {
+    font-weight: 500;
+    font-size: 18px;
+    opacity: .9;
+    color: #fff;
+}
+
+.site-footer__copy {
+    font-weight: 500;
+    font-size: 14px;
+    opacity: .9;
+    color: #bbb;
+}
+
+.site-footer a {
+    color: #cfcfcf;
+    text-decoration: none;
+    opacity: .9;
+    transition: opacity .2s ease;
+}
+
+.site-footer a:hover {
+    opacity: 1;
+    color: #fff;
+}
+
+.image-row {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    flex-wrap: wrap;
+}
+
+.image-row img {
+    max-width: 45%;
+    height: auto;
+}
+
+.swing-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0px;
+  padding: 60px 10%;
+  background: #111;
+  color: white;
+  min-height: 600px;
+  box-sizing: border-box;
+}
+
+.swing-text {
+  flex: 1;
+  max-width: 500px;
+}
+
+.swing-text h2 {
+  font-size: 16px;
+  color: #bbb;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+.swing-text h1 {
+  font-size: 48px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.swing-text p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+.swing-images {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.swing-images img {
+  max-width: 50%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: contain;
+}
+
+.swing-images img:first-child {
+  z-index: 1;
+}
+
+.swing-images img:nth-child(2) {
+  margin-left: -200px;
+  z-index: 2;
+}
+
+
 /* 모바일 */
 @media (max-width:768px) {
 
@@ -957,7 +1295,7 @@ body {
     }
 
     .main-content {
-        padding-top: 100px;
+        padding: 120px 20px 60px;
     }
 
     .courses-hero {
@@ -1073,356 +1411,96 @@ body {
         margin-left: 0 !important;
     }
 
-    .kgtech-section {
-        padding: 60px 20px;
+     .kgtech-section {
+        padding: 120px 20px 60px;
+    }
+
+    .kgtech-hero {
+        margin-bottom: 40px;
     }
 
     .kgtech-title {
         font-size: 32px;
     }
 
-    .kgtech-split {
+    .kgtech-subtitle {
+        font-size: 16px;
+    }
+
+    .kgtech-highlights {
         grid-template-columns: 1fr;
         gap: 30px;
+        margin-bottom: 60px;
     }
-}
 
-/* KGOLF Simulator Technology Section */
-.kgtech-section {
-    display: none;
-    padding: 80px 20px;
-    background: #fff;
-}
-
-.kgtech-section.active {
-    display: block;
-}
-
-.kgtech-hero {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto 60px;
-}
-
-.kgtech-eyebrow {
-    font-size: 16px;
-    color: #FF8C00;
-    text-transform: uppercase;
-    letter-spacing: .2em;
-    margin-bottom: 10px;
-}
-
-.kgtech-title {
-    font-family: "Bebas Neue", Impact, sans-serif;
-    font-size: 48px;
-    font-weight: bold;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.kgtech-subtitle {
-    font-size: 18px;
-    color: #666;
-    line-height: 1.6;
-}
-
-.kgtech-highlights {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-}
-
-.kgtech-card {
+    .kgtech-split {
+        display: grid; 
+        grid-template-columns: 1fr;
+        text-align: left;
+        gap: 30px;
+        text-align: center;
+        margin: 0 auto 30px;
+        border: 1px solid #eee;
+    }
+    
+    /* .kgtech-card {
     background: #f8f8f8;
     padding: 30px;
     border: 1px solid #eee;
     transition: all .3s ease;
-}
+} */
 
-.kgtech-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
-}
+    .kgtech-split-text {
+         background: #f8f8f8;
+         border: 1px solid #eee;
+         padding: 30px;
+            box-sizing: border-box;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, .1);
+            margin: 0;
+        order: 1;
+    }
+    
+    .kgtech-split-media {
+        order: 2;
+        max-width: 100%;
+        margin: 0 auto;
+    }
+    
+    .kgtech-split-text h3 {
+        font-size: 17px;
+        margin-bottom: 15px;
+    }
 
-.kgtech-card h4 {
-    font-size: 20px;
-    color: #333;
-    margin-bottom: 15px;
-}
+    .kgtech-split-text p {
+        font-size: 15px;
+    }
+    
+    .kgtech-split-media img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        /* display: block; */
+    }
+    
+    .spin-track-image {
+        max-width: 100%;
+        margin: 0; 
+    }
 
-.kgtech-card p {
-    color: #666;
-    margin-bottom: 20px;
-}
+    .kgtech-bullets li {
+        font-size: 15px;
+        position: relative;
+        padding-left: 20px;
+        text-align: left;
+    }
 
-.kgtech-card ul {
-    list-style: none;
-    padding-left: 20px;
-}
+    .kgtech-bullets li:before {
+        content: "✓";
+        color: #00C851;
+        position: relative;
+        left: -20px;
+    }
 
-.kgtech-card li {
-    color: #666;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.kgtech-card li:before {
-    content: "✓";
-    color: #00C851;
-    position: absolute;
-    left: -20px;
-}
-
-.kgtech-split {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: center;
-    max-width: 1200px;
-    margin: 0 auto 80px;
-}
-
-.kgtech-split-text h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.kgtech-split-text p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.kgtech-bullets {
-    list-style: none;
-    padding-left: 20px;
-}
-
-.kgtech-bullets li {
-    color: #666;
-    margin-bottom: 10px;
-    position: relative;
-}
-
-.kgtech-bullets li:before {
-    content: "→";
-    color: #FF8C00;
-    position: absolute;
-    left: -20px;
-}
-
-.kgtech-split-media img {
-    width: 100%;
-    height: auto;
-}
-
-.kgtech-specs {
-    max-width: 1200px;
-    margin: 0 auto 80px;
-    text-align: center;
-}
-
-.kgtech-specs h3 {
-    font-size: 32px;
-    text-align: center;
-    margin-bottom: 40px;
-    color: #333;
-}
-
-.kgtech-specgrid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
-    text-align: left;
-}
-
-.kgtech-specgrid h5 {
-    font-size: 18px;
-    color: #333;
-    margin-bottom: 15px;
-}
-
-.kgtech-specgrid ul {
-    list-style: none;
-}
-
-.kgtech-specgrid li {
-    color: #666;
-    margin-bottom: 10px;
-}
-
-.kgtech-cta {
-    text-align: center;
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.kgtech-cta h3 {
-    font-size: 32px;
-    margin-bottom: 20px;
-    color: #333;
-}
-
-.kgtech-cta p {
-    color: #666;
-    margin-bottom: 30px;
-}
-
-.kgtech-actions {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.kgtech-btn {
-    background: linear-gradient(135deg, #FF8C00, #FF7F50);
-    color: #fff;
-    padding: 15px 30px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: all .3s ease;
-}
-
-.kgtech-btn:hover {
-    transform: translateY(-2px);
-}
-
-.kgtech-btn--ghost {
-    background: transparent;
-    border: 2px solid #FF8C00;
-    color: #FF8C00;
-}
-
-.kgtech-btn--ghost:hover {
-    background: #FF8C00;
-    color: #fff;
-}
-
-.spin-track-image {
-    max-width: 300px;
-    margin: 10px 0;
-}
-
-.site-footer {
-    background: #0b0b0b;
-    color: #cfcfcf;
-    border-top: 1px solid rgba(255, 255, 255, .08);
-    font-family: 'League Spartan', sans-serif;
-}
-
-.site-footer__inner {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 28px 16px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 6px;
-    text-align: center;
-}
-
-.site-footer__brand {
-    font-weight: 500;
-    font-size: 18px;
-    opacity: .9;
-    color: #fff;
-}
-
-.site-footer__copy {
-    font-weight: 500;
-    font-size: 14px;
-    opacity: .9;
-    color: #bbb;
-}
-
-.site-footer a {
-    color: #cfcfcf;
-    text-decoration: none;
-    opacity: .9;
-    transition: opacity .2s ease;
-}
-
-.site-footer a:hover {
-    opacity: 1;
-    color: #fff;
-}
-
-.image-row {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    flex-wrap: wrap;
-}
-
-.image-row img {
-    max-width: 45%;
-    height: auto;
-}
-
-.swing-section {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 60px;
-  padding: 60px 10%;
-  background: #111;
-  color: white;
-  min-height: 600px;
-  box-sizing: border-box;
-}
-
-.swing-text {
-  flex: 1;
-  max-width: 500px;
-}
-
-.swing-text h2 {
-  font-size: 16px;
-  color: #bbb;
-  margin-bottom: 12px;
-  letter-spacing: 1px;
-}
-
-.swing-text h1 {
-  font-size: 48px;
-  line-height: 1.2;
-  margin-bottom: 20px;
-}
-
-.swing-text p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #ccc;
-}
-
-.swing-images {
-  flex: 1;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-
-.swing-images img {
-  max-width: 50%;
-  height: auto;
-  border-radius: 12px;
-  object-fit: contain;
-}
-
-.swing-images img:first-child {
-  z-index: 1;
-}
-
-.swing-images img:nth-child(2) {
-  margin-left: -200px;
-  z-index: 2;
-}
-
-@media (max-width:768px) {
     .site-footer__inner {
         padding: 24px 16px;
         gap: 4px;
@@ -1430,6 +1508,16 @@ body {
 
     .site-footer__brand,
     .site-footer__copy {
+        font-size: 13px;
+    }
+
+    .site-footer__inner {  
+        padding: 24px 16px;
+        gap: 4px;
+    }
+
+    .site-footer__brand,
+    .site-footer__copy {  
         font-size: 13px;
     }
 }
