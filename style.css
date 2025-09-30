@@ -22,6 +22,10 @@ body {
     text-align: center;
     font-size: 16px;
     font-weight: bold;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1001;
 }
 
 .fire-icon {
@@ -34,7 +38,7 @@ body {
     padding: 15px 0;
     box-shadow: 0 2px 10px rgba(0, 0, 0, .1);
     position: fixed;
-    top: 0;
+    top: 44px;
     width: 100%;
     z-index: 1000;
 }
@@ -92,7 +96,7 @@ body {
   text-decoration: none;
   font-weight: bold;
   transition: transform .3s;
-  margin-top: 40px; /* ✅ 버튼 위쪽 공간 추가 */
+  margin-top: 40px;
 }
 
 .buy-now-btn:hover {
@@ -101,12 +105,12 @@ body {
 
 /* Hamburger Menu */
 .hamburger-menu {
-    display: none; /* Hidden by default */
+    display: none;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
-    z-index: 1001; /* Ensure it's on top */
+    z-index: 1001;
 }
 
 .hamburger-line {
@@ -118,13 +122,11 @@ body {
     transition: transform 0.3s, opacity 0.3s;
 }
 
-
-
-
 /* 메인 콘텐츠(패스 페이지) */
 .main-content {
     background: #fff;
     padding: 80px 20px;
+    padding-top: 130px;
     display: none;
 }
 
@@ -200,9 +202,8 @@ body {
     display: block !important;
 }
 
-
 .carousel-wrapper {
-  background: #111; /* 검은 배경을 제목 + 슬라이드 모두 감싸도록 */
+  background: #111;
   color: white;
   padding: 40px 20px;
 }
@@ -211,22 +212,22 @@ body {
   text-align: center;
   font-size: 36px;
   font-weight: 800;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 }
 
 .carousel {
-  position: relative;   /* 버튼 위치 기준 */
+  position: relative;
   width: 100%;
-  overflow: hidden;     /* 넘치는 이미지 숨김 */
+  overflow: hidden;
 }
-/* ✅ 교체된 화살표 */
+
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   width: 80px;
   height: 80px;
-  background: none; /* 투명 배경 */
+  background: none;
   border: none;
   cursor: pointer;
   z-index: 10;
@@ -262,13 +263,11 @@ body {
   right: 30px;
 }
 
-/* 슬라이드 컨테이너 */
 .slides {
     display: flex;
     transition: transform 0.3s ease-in-out;
 }
 
-/* 슬라이드 이미지 */
 .slides img {
     flex: 0 0 calc(100% / 3);
     max-width: calc(100% / 3);
@@ -277,6 +276,7 @@ body {
     padding: 0 2px;
     box-sizing: border-box;
 }
+
 /* 카드/슬라이더 */
 .slider-container {
     position: relative;
@@ -401,7 +401,7 @@ body {
 }
 
 .golf-card-content p {
-  margin: 6px 0; /* 각 줄 사이 살짝 여백 */
+  margin: 6px 0;
 }
 
 .club-name {
@@ -538,7 +538,6 @@ body {
     opacity: .95;
 }
 
-
 /* Golf Courses */
 .courses-page {
     display: none;
@@ -546,6 +545,7 @@ body {
     color: #333;
     min-height: 100vh;
     padding: 0;
+    padding-top: 100px;
 }
 
 .courses-page.active {
@@ -555,6 +555,7 @@ body {
 .courses-hero {
     text-align: center;
     margin-bottom: 0;
+    margin-top: -100px;
 }
 
 .courses-hero-video {
@@ -571,8 +572,6 @@ body {
     object-fit: cover;
 }
 
-/* 비디오 위 텍스트 오버레이: 하단 정렬 */
-/* 비디오 위 텍스트를 위로 올림 */
 .courses-hero-text {
     position: absolute;
     inset: 0;
@@ -580,11 +579,9 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    /* 중앙 기준 */
     text-align: center;
     z-index: 1;
     padding: 0 16px;
-    /* 하단 여백 제거 */
     color: #fff;
     text-shadow: 0 4px 20px rgba(0, 0, 0, .75);
     background: linear-gradient(to bottom,
@@ -593,15 +590,6 @@ body {
             rgba(0, 0, 0, 0.35) 100%);
     bottom: 12dvh;
 }
-
-@media (max-width: 768px) {
-    .courses-hero-text {
-        bottom: 6dvh;
-    }
-
-    /* 모바일은 조금만 */
-}
-
 
 .courses-title {
     font-size: clamp(48px, 6vw, 96px);
@@ -617,7 +605,6 @@ body {
     opacity: .95;
 }
 
-/* Light 선언 */
 @font-face {
   font-family: "Avenir LT W01";
   src: url("https://static.parastorage.com/fonts/v2/af36905f-3c92-4ef9-b0c1-f91432f16ac1/v1/avenir-lt-w01_35-light1475496.woff2") format("woff2");
@@ -634,21 +621,18 @@ body {
   font-display: swap;
 }
 
-
 .courses-content {
     max-width: 1200px;
     margin: 0 auto;
-    /* display: grid; */
     grid-template-columns: 1fr 1fr;
     gap: 40px;
     align-items: center;
     padding: 80px 20px;
     background: #fff;
-
     font-family: "Avenir LT W01", Arial, sans-serif;
     font-weight: 500;
-    -webkit-font-smoothing: antialiased; /* 크롬/사파리 글자 부드럽게 */
-    -moz-osx-font-smoothing: grayscale; /* 파이어폭스(macOS) */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     color: rgb(35, 34, 34); 
     text-align: center;
 }
@@ -931,35 +915,53 @@ body {
 /* 모바일 */
 @media (max-width:768px) {
 
+    .top-banner {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+
+    .navbar {
+        top: 38px;
+    }
+
     .hamburger-menu {
-        display: block; /* Show on mobile */
+        display: block;
     }
 
     .nav-menu {
         display: none;
         flex-direction: column;
-        justify-content: center; /* Center items vertically */
-        align-items: center; /* Center items horizontally */
-        position: fixed; /* Take up full screen */
+        justify-content: center;
+        align-items: center;
+        position: fixed;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
-        background-color: rgba(255, 255, 255, 0.95); /* Semi-transparent white */
-        backdrop-filter: blur(10px); /* Frosted glass effect */
+        background-color: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(10px);
         transition: transform 0.3s ease-in-out;
-        transform: translateX(100%); /* Hide off-screen */
+        transform: translateX(100%);
         z-index: 1000;
     }
 
     .nav-menu.active {
-        transform: translateX(0%); /* Slide in */
-        display: flex; /* Show when active */
+        transform: translateX(0%);
+        display: flex;
     }
 
     .nav-item {
-        font-size: 24px; /* Larger text for mobile */
-        margin: 20px 0; /* Space out items */
+        color: #fff;
+        font-size: 24px;
+        margin: 20px 0;
+    }
+
+    .main-content {
+        padding-top: 100px;
+    }
+
+    .courses-hero {
+        margin-top: -100px;
     }
 
     .slider-card {
@@ -1008,9 +1010,83 @@ body {
     .courses-hero-text {
         padding-bottom: 10dvh;
     }
+
+    .carousel-title {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .slides img {
+        flex: 0 0 100%;
+        max-width: 100%;
+        height: 300px;
+    }
+
+    .arrow {
+        width: 50px;
+        height: 50px;
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
+
+    .arrow.left::before,
+    .arrow.right::before {
+        width: 25px;
+        height: 25px;
+        border-width: 5px;
+    }
+
+    .swing-section {
+        flex-direction: column;
+        text-align: center;
+        min-height: auto;
+        padding: 40px 5%;
+        gap: 30px;
+    }
+
+    .swing-text {
+        max-width: 100%;
+    }
+
+    .swing-text h1 {
+        font-size: 32px;
+    }
+
+    .swing-images {
+        flex-direction: column;
+        gap: 20px;
+        width: 100%;
+    }
+
+    .swing-images img {
+        max-width: 80%;
+        margin-left: 0 !important;
+    }
+
+    .swing-images img:nth-child(2) {
+        margin-left: 0 !important;
+    }
+
+    .kgtech-section {
+        padding: 60px 20px;
+    }
+
+    .kgtech-title {
+        font-size: 32px;
+    }
+
+    .kgtech-split {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
 }
 
-/* Footer (modern black tone) */
 /* KGOLF Simulator Technology Section */
 .kgtech-section {
     display: none;
@@ -1229,10 +1305,8 @@ body {
     margin: 10px 0;
 }
 
-
 .site-footer {
     background: #0b0b0b;
-    /* 거의 블랙 */
     color: #cfcfcf;
     border-top: 1px solid rgba(255, 255, 255, .08);
     font-family: 'League Spartan', sans-serif;
@@ -1276,45 +1350,32 @@ body {
 }
 
 .image-row {
-    display: flex;               /* 가로 정렬 */
-    justify-content: center;     /* 가운데 정렬 */
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
-    flex-wrap: wrap;             /* 화면이 좁으면 자동 줄바꿈 */
+    flex-wrap: wrap;
 }
 
 .image-row img {
-    max-width: 45%;  /* 두 장이 가로로 들어가도록 */
+    max-width: 45%;
     height: auto;
-}
-
-
-@media (max-width:768px) {
-    .site-footer__inner {
-        padding: 24px 16px;
-        gap: 4px;
-    }
-
-    .site-footer__brand,
-    .site-footer__copy {
-        font-size: 13px;
-    }
 }
 
 .swing-section {
   display: flex;
-  align-items: center;      /* 세로 중앙 정렬 */
+  align-items: center;
   justify-content: space-between;
-  gap: 60px;                /* 텍스트와 이미지 사이 간격 */
-  padding: 10px 10%;
+  gap: 60px;
+  padding: 60px 10%;
   background: #111;
   color: white;
-  min-height: 600px;        /* 섹션 높이 강제 확보 */
+  min-height: 600px;
   box-sizing: border-box;
 }
 
 .swing-text {
   flex: 1;
-  max-width: 500px;         /* 텍스트 폭 제한 */
+  max-width: 500px;
 }
 
 .swing-text h2 {
@@ -1340,36 +1401,35 @@ body {
   flex: 1;
   display: flex;
   flex-direction: row;
-  align-items: center;       /* 이미지 가운데 정렬 */
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .swing-images img {
-  max-width: 100%;           /* 이미지 크기 줄이기 */
+  max-width: 50%;
   height: auto;
   border-radius: 12px;
   object-fit: contain;
 }
 
-.swing-images img:nth-child(2) {
-  margin-left: -450px;      /* 🔥 오른쪽으로 겹치기 */
+.swing-images img:first-child {
+  z-index: 1;
 }
 
-/* 반응형 */
-@media (max-width: 900px) {
-  .swing-section {
-    flex-direction: column;
-    text-align: center;
-    min-height: auto;
-    padding: 60px 5%;
-  }
+.swing-images img:nth-child(2) {
+  margin-left: -200px;
+  z-index: 2;
+}
 
-  .swing-images {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
+@media (max-width:768px) {
+    .site-footer__inner {
+        padding: 24px 16px;
+        gap: 4px;
+    }
 
-  .swing-images img {
-    max-width: 45%;
-  }
+    .site-footer__brand,
+    .site-footer__copy {
+        font-size: 13px;
+    }
 }
