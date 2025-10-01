@@ -107,7 +107,7 @@
 
         <!-- Spin Track Section -->
         <div class="kgtech-split">
-             <div class="kgtech-split-media">
+            <div class="kgtech-split-media">
                 <img class="spin-track-image"
                     src="https://static.wixstatic.com/media/deaf80_22ee66a148894ec4993f155c2b604950~mv2.gif"
                     alt="Spin Track Technology" />
@@ -127,15 +127,6 @@
                     alt="Spin Track Technology" />
             </div> -->
         </div>
-
-        <!-- Tech Specs -->
-        <!-- <div class="kgtech-specs">
-
-
-            <div class="kgtech-specgrid">
-
-            </div>
-        </div> -->
 
         <!-- CTA -->
         <div class="kgtech-cta">
@@ -188,7 +179,7 @@
             <h2 class="carousel-title">
                 Experience Tour-Level Indoor Golf
             </h2>
-            
+
             <div class="carousel">
                 <button class="arrow left" onclick="prevSlide()"></button>
                 <div class="slides" id="slides">
@@ -649,11 +640,51 @@
 
     <!-- Footer -->
     <footer class="site-footer">
-        <div class="site-footer__inner">
-            <span class="site-footer__brand">KC Golf Stadium</span>
-            <span class="site-footer__copy">© <span id="year"></span>. All Rights Reserved</span>
+        <div class="footer-grid">
+            <!-- Company -->
+            <div class="footer-col">
+                <h4>About KGolf Stadium</h4>
+                <ul>
+                    <li><a href="#">Monday - Sunday</a></li>
+                    <li><a href="#">9am - 11pm</a></li>
+                    <li><a href="#">427 NorthYork Drive</a></li>
+                </ul>
+            </div>
+
+            <!-- Policies -->
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="#">admin@KgolfStadium.ca</a></li>
+                </ul>
+            </div>
+
+            <!-- Newsletter -->
+            <div class="footer-col">
+                <h4>Subscribe to our Newsletter</h4>
+                <p>Subscribe to stay up to date with us.</p>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Enter your email" required>
+                    <button type="submit">✉</button>
+                </form>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom -->
+        <div class="footer-bottom">
+            <p>© <span id="year"></span> KC Indoor Golf</p>
         </div>
     </footer>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+
 
     <script src="script.js"></script>
 </body>
